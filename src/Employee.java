@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.stream.Collectors;
 
 class Employee{
@@ -128,6 +125,57 @@ class EmployeeMain {
                                 emp->emp.department,
                                 Collectors.minBy(Comparator.comparingDouble(emp-> emp.salary)))
                 ).forEach((k,v)-> System.out.println(k+" -> "+v.get()));
+
+        printDashes();
+
+
+        //Program to find nth highest salary if all salaries unique
+        System.out.println("Program to find nth highest salary if all salaries unique");
+        int n=3;
+        employeeList.stream().sorted((emp1,emp2)->Double.compare(emp2.salary,emp1.salary))
+                .skip(n-1).findFirst().ifPresent(System.out::println);
+
+printDashes();
+
+        //Program to find nth highest salary if all salaries not unique - 1
+        System.out.println("Program to find nth highest salary if all salaries not unique - 1");
+        int n2=3;
+        var map1 = employeeList.stream().sorted((emp1,emp2)->Double.compare(emp2.salary,emp1.salary))
+                .collect(Collectors.groupingBy((e)->e.salary));
+
+                map1
+                .keySet()
+                .stream().sorted(Comparator.reverseOrder())
+                .skip(n2-1)
+                .limit(1)
+                .findFirst()
+                .ifPresentOrElse((s)-> System.out.println(s + " belongs to " + map1.get(s)),
+                        ()-> System.out.println("No such element found"));
+
+
+        printDashes();
+
+        //Program to find nth highest salary if all salaries not unique - 2
+        System.out.println("Program to find nth highest salary if all salaries not unique - 2");
+        int n3=3;
+        Map.Entry<Double, List<String>> first = employeeList.stream()
+                .collect(Collectors.groupingBy((e) -> e.salary,
+                        Collectors.mapping(e -> e.name,
+                                Collectors.toList()
+                        )))
+                .entrySet()
+                .stream()
+                .sorted(Collections.reverseOrder(Map.Entry.comparingByKey()))
+                .skip(n3 - 1)
+                .findFirst()
+                .get();
+
+        System.out.println(first);
+
+        printDashes();
+
+
+
     }
 
 

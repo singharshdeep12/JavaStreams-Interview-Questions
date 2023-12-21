@@ -14,6 +14,10 @@ Employee Class Question ->
 
 //Program to print max min salary of employee from each department
 
+//Program to find nth highest salary if all salaries unique
+
+//Program to find nth highest salary if all salaries not unique - 1
+
 
 <br>
 
@@ -37,4 +41,7 @@ ArrayProblems1 ->
 //Program to find second highest number in an array
 
 //Program to find longest string from given array
-        
+
+//Program to find all elements in number array starting with 1
+
+
