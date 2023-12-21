@@ -16,4 +16,15 @@ Employee Class Question ->
 
 
 
+StringProblems 1
+
+//Program to find occurence of each character in string
+
+//Program to find all duplicate characters in string
+
+//Program to find all unique characters in string
+
+//Program to find first non repeat element in string (2 ways -> 1 normal, 1 LinkedHashMap)
+
+//Program to find first repeated element in string -  using LinkedHashMap
 
