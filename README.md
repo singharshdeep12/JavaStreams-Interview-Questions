@@ -30,3 +30,11 @@ StringProblems 1
 
 //Program to find first repeated element in string -  using LinkedHashMap
 
+<br>
+
+ArrayProblems1 -> 
+
+//Program to find second highest number in an array
+
+//Program to find longest string from given array
+        
